@@ -2,45 +2,29 @@
 
 This repository contains examples, notebooks, software etc for the EITA10 Electronics course at LU/EIT
 
-## Install git and Python
+Upstream is [github:PalePrime/eita10](https://github.com/PalePrime/eita10). This is a fork to easily allow installation with [nix](https://nixos.org/).
 
-Install git from its home page https://git-scm.com/, see to it that the git binaries are added to your shell/command PATH
+## "Installation" with nix
 
-Install Python from its home page https://www.python.org/, also for Python, see to it that binaries are added to your shell/command PATH
+Clone this repository with
 
-All software packages needed for exercises and labs are straightforward to install using the Python package manager, pip. For full functionality, specifically generated schematic diagrams and zoomable plots some additional software needs to be installed as described below.
+```
+git clone https://github.com/ManneG/eita10.git
+```
 
-## Steps after installing git and Python
-
-Open a new shell/command promt (to make sure git, pip, etc are found on the PATH) and clone this repository:
-
-    git clone https://github.com/PalePrime/eita10.git
-
-This command creates a new directory called "eita10". Move down into this directory and let it be the default directory for all subsequent commands.
-
-Install the required Python packages:
-
-    pip install jupyterlab ipympl lcapy sounddevice
-
-## Supporting schematic diagrams
-
-To produce schematic diagrams Lcapy needs to have LaTeX, the CircuiTikZ package, and either GhostScript or ImageMagick installed.
-
-The TeX Live 2021 distribution from https://tug.org/texlive/ works on all platforms and has an interactive package manager that can pull in CircuiTikZ. It is, however, a bulky install and may take hours to complete(!).
-
-ImageMagick is available for all platforms from https://imagemagick.org/index.php
-
-## Supporting interactive, zoomable plots
-
-We will often plot diagrams in notebooks. There is built-in support in the Python packages we use to make such diagrams interactively zoomable. However, this functionality requires that you have Node.js installed. Download and install from https://nodejs.org/en/
+and run it with `nix-shell`, or more explicitly `nix-shell shell.nix`. It will run a shellHook that starts jupyter.
 
 ## Notebook server start
 
-Everything should now be in place, and we are ready to give it a go. Start the notebook server using the command:
+Start the notebook server using the command:
 
-    jupyter-lab
+```
+nix-shell
+```
 
 The notebook server should start and will write log messages in the shell/command window. It will display a URL to access the server (only localhost access by default), and normally it also automatically opens a tab in your web browser.
+
+*The text below is unmodified from upstream, and nix should make sure installation is successful*
 
 ## Check that it works
 
