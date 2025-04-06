@@ -38,6 +38,6 @@ in pkgs.mkShell {
   ];
 
   shellHook = ''
-	jupyter-lab
+	jupyter-lab; exit
   '';
 }
